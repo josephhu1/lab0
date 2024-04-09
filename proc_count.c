@@ -7,7 +7,12 @@
 static struct proc_dir_entry *entry;
 
 static int proc_count(struct seq_file *m, void *v){
-	// TODO: it's all yours
+    int n_processes = 0;
+    struct process_task *p;
+	for_each_process(p) {
+        n_processes++;
+    }
+    seq_printf(m, "n_processes: %d\n", n_processes);
 	return 0;
 }
 
