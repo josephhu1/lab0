@@ -8,7 +8,7 @@ static struct proc_dir_entry *entry;
 
 static int proc_count(struct seq_file *m, void *v){
     int n_processes = 0;
-    struct process_task *p;
+    struct task_struct *p;
 	for_each_process(p) {
         n_processes++;
     }
