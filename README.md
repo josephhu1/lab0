@@ -1,27 +1,30 @@
 # A Kernel Seedling
-TODO: intro
+We create a /proc/count file that shows the current number
+of running processes. 
 
 ## Building
 ```shell
-TODO: cmd for build
+make
+sudo insmod proc_count .ko
 ```
 
 ## Running
 ```shell
-TODO: cmd for running binary
+cat /proc/count
 ```
-TODO: results?
+number of processes (as outputted): 134
 
 ## Cleaning Up
 ```shell
-TODO: cmd for cleaning the built binary
+sudo rmmod proc_count
 ```
 
 ## Testing
 ```python
 python -m unittest
 ```
-TODO: results?
+Ran 3 tests in 9.368s
+OK
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
@@ -30,4 +33,4 @@ It should match release numbers as seen on https://www.kernel.org/.
 ```shell
 uname -r -s -v
 ```
-TODO: kernel ver?
+Linux 5.14.8-arch1-1
